@@ -20,10 +20,10 @@ class cloud():
 def clouds_run(win, clouds, clouds_img, counter_cloud):
     res = False
     if counter_cloud > cld_border_shift:
-        new_y = random.randrange(0, win_h, win_h / 10)
+        new_y = random.randrange(0, int(win_h), int(win_h / 10))
         while len(clouds) > 0 and (clouds[-1].y - cld_h / 2 < new_y) and (
                 new_y < clouds[-1].y + cld_h / 2):
-            new_y = random.randrange(0, win_h - cld_h, win_h / 2)
+            new_y = random.randrange(0, int(win_h - cld_h), int(win_h / 2))
 
         clouds.append(cloud(win_w, new_y, cld_v, clouds_img[random.randint(0, 3)]))
         res = True
